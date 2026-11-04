@@ -39,3 +39,7 @@ powershell -ExecutionPolicy Bypass -File tools\setup-release-signing.ps1
 ```
 鍵を `%USERPROFILE%\.keystores` に作成し、GitHub Secrets（`ANDROID_KEYSTORE_BASE64` / `ANDROID_KEYSTORE_PASSWORD` / `ANDROID_KEY_ALIAS` / `ANDROID_KEY_PASSWORD`）に登録します。
 **鍵とパスワードのファイルは必ずバックアップしてください。** 失うと同じアプリとして更新できなくなります。
+
+## ライセンス
+
+[MIT License](LICENSE)。自由に使用・改変・再配布できます。
