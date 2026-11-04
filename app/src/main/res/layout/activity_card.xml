@@ -48,32 +48,66 @@
             android:text="@string/add_card" />
     </LinearLayout>
 
-    <!-- 操作ボタン（画面タップで表示 / 数秒で自動的に隠れる） -->
     <LinearLayout
-        android:id="@+id/controls"
-        android:layout_width="wrap_content"
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_margin="16dp"
-        android:background="#99000000"
-        android:orientation="horizontal"
-        android:padding="4dp">
+        android:layout_gravity="top"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/add"
-            style="?android:attr/borderlessButtonStyle"
+        <!-- 名刺のタブ（2枚以上のとき。タップで切り替え） -->
+        <HorizontalScrollView
+            android:id="@+id/tabs_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#99000000"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp" />
+        </HorizontalScrollView>
+
+        <!-- 操作ボタン（画面タップで表示 / 数秒で自動的に隠れる） -->
+        <LinearLayout
+            android:id="@+id/controls"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:textColor="#FFFFFF" />
+            android:layout_gravity="end"
+            android:layout_margin="12dp"
+            android:background="#99000000"
+            android:orientation="horizontal"
+            android:padding="4dp">
 
-        <Button
-            android:id="@+id/edit"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/edit"
-            android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/flip"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/flip"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/add"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/edit"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
     </LinearLayout>
 
     <!-- 下部: NFC の警告と、何枚目かの表示 -->

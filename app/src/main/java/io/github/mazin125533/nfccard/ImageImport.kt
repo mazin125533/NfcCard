@@ -24,7 +24,8 @@ object ImageImport {
     fun import(context: Context, uri: Uri, outDir: File = context.cacheDir): File {
         val bitmap = decode(context, uri, MAX_IMPORT_PX)
         val png = bitmap.hasAlpha()
-        val out = File(outDir, "import-${System.currentTimeMillis()}.${if (png) "png" else "jpg"}")
+        // 複数枚を続けて取り込んでも名前が重ならないようにする
+        val out = File.createTempFile("import-", if (png) ".png" else ".jpg", outDir)
         out.outputStream().use {
             bitmap.compress(if (png) Bitmap.CompressFormat.PNG else Bitmap.CompressFormat.JPEG, 92, it)
         }

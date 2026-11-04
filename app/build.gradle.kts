@@ -33,6 +33,10 @@ android {
     }
 
     buildTypes {
+        // デバッグ版は別アプリとして入れる（リリース版と並べてテストでき、名刺も消えない）
+        debug {
+            applicationIdSuffix = ".debug"
+        }
         release {
             isMinifyEnabled = false
             signingConfig = signingConfigs.findByName("release")
