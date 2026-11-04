@@ -1,0 +1,38 @@
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ローカル設定（SDK パスなど）
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+.kotlin/
+
+# ビルド成果物
+*.apk
+*.aab
+*.ap_
+*.dex
+output-metadata.json
+
+# 署名鍵・秘密情報
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+*.pem
+*.p12
+.env
+
+# ログ・OS
+*.log
+.DS_Store
+Thumbs.db

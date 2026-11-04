@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.NFC" />
+    <!-- 相手が読み取ったときに振動で知らせる（インストール時に自動で許可される通常権限） -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-feature android:name="android.hardware.nfc.hce" android:required="true" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault.DayNight">
+
+        <!-- 名刺を全画面で表示し、表示中の名刺の URL を NFC で渡す -->
+        <activity
+            android:name=".CardActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 名刺の追加・編集（画像の取り込みと URL の設定） -->
+        <activity
+            android:name=".EditCardActivity"
+            android:exported="false"
+            android:label="@string/edit_title"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- NFC Forum Type 4 タグをエミュレートして URL を渡す -->
+        <service
+            android:name=".NdefHostApduService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/apduservice" />
+        </service>
+    </application>
+</manifest>

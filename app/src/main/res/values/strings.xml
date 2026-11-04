@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">NFC名刺</string>
+    <string name="service_description">名刺の URL を NFC タグとして渡す</string>
+
+    <!-- 名刺の表示画面 -->
+    <string name="empty_title">名刺がまだありません</string>
+    <string name="empty_body">画像を取り込んで、渡したい URL を設定してください。名刺を表示している間、スマホをかざした相手にその URL が届きます。</string>
+    <string name="add_card">名刺を追加</string>
+    <string name="add">追加</string>
+    <string name="edit">編集</string>
+    <string name="card_description">名刺の画像</string>
+    <string name="status_sent">送信しました</string>
+    <string name="status_nfc_off">NFC がオフです。設定でオンにしてください</string>
+    <string name="status_no_nfc">この端末は NFC / HCE に対応していません</string>
+    <string name="nfc_settings">NFC 設定を開く</string>
+    <string name="image_load_failed">画像を読み込めませんでした</string>
+
+    <!-- 名刺の編集画面 -->
+    <string name="edit_title">名刺の編集</string>
+    <string name="pick_image">画像を選ぶ</string>
+    <string name="change_image">画像を変更</string>
+    <string name="url_label">渡す URL</string>
+    <string name="url_hint">https://…</string>
+    <string name="save">保存</string>
+    <string name="delete">削除</string>
+    <string name="cancel">キャンセル</string>
+    <string name="delete_confirm">この名刺を削除しますか？</string>
+    <string name="need_image">画像を選んでください</string>
+    <string name="invalid_url">http:// または https:// の URL を入力してください</string>
+    <string name="image_import_failed">画像を取り込めませんでした</string>
+</resources>
